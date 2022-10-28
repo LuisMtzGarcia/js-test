@@ -81,10 +81,13 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
     switch (tipoNomina) {
         case 'A':
             tipoNomina = 0;
+            break;
         case 'B':
             tipoNomina = 1;
+            break;
         case 'C':
             tipoNomina = 2;
+            break;
         case 'D':
             tipoNomina = 3;
     }

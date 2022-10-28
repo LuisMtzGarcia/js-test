@@ -1,15 +1,42 @@
 document.getElementById('calcular-1').addEventListener("click", function() {
     let row = document.getElementById('r1');
-
+    let nomina = row.children[0].textContent;
+    let fecha = row.children[1].textContent;
+    let genero = row.children[2].textContent;
+    let objeto = calculoMotor(nomina, fecha, genero);
+    row.children[3].textContent = objeto['montoMinimo'];
+    row.children[4].textContent = objeto['montoMaximo'];
+    row.children[5].textContent = objeto['recomendacionLinea'];
 })
 document.getElementById('calcular-2').addEventListener("click", function() {
-    
+    let row = document.getElementById('r2');
+    let nomina = row.children[0].textContent;
+    let fecha = row.children[1].textContent;
+    let genero = row.children[2].textContent;
+    let objeto = calculoMotor(nomina, fecha, genero);
+    row.children[3].textContent = objeto['montoMinimo'];
+    row.children[4].textContent = objeto['montoMaximo'];
+    row.children[5].textContent = objeto['recomendacionLinea'];
 })
 document.getElementById('calcular-3').addEventListener("click", function() {
-    
+    let row = document.getElementById('r3');
+    let nomina = row.children[0].textContent;
+    let fecha = row.children[1].textContent;
+    let genero = row.children[2].textContent;
+    let objeto = calculoMotor(nomina, fecha, genero);
+    row.children[3].textContent = objeto['montoMinimo'];
+    row.children[4].textContent = objeto['montoMaximo'];
+    row.children[5].textContent = objeto['recomendacionLinea'];
 })
 document.getElementById('calcular-4').addEventListener("click", function() {
-    
+    let row = document.getElementById('r4');
+    let nomina = row.children[0].textContent;
+    let fecha = row.children[1].textContent;
+    let genero = row.children[2].textContent;
+    let objeto = calculoMotor(nomina, fecha, genero);
+    row.children[3].textContent = objeto['montoMinimo'];
+    row.children[4].textContent = objeto['montoMaximo'];
+    row.children[5].textContent = objeto['recomendacionLinea'];
 })
 
 /**
@@ -62,9 +89,15 @@ function calculoMotor(tipoNomina, fechaPrimerEmpleo, genero) {
             tipoNomina = 3;
     }
 
-    let fecha = new Date(fechaPrimerEmpleo);
+    let fecha_split = fechaPrimerEmpleo.split("/")
+    let year, month, day;
+    year = fecha_split[2];
+    month = fecha_split[1];
+    day = fecha_split[0];
+
+    let fecha = new Date(`${month}/${day}/${year}`);
     let hoy = new Date();
-    let difference = fecha - hoy;
+    let difference = hoy - fecha;
     // to seconds 
     difference = difference = difference * 0.001;
     // to days

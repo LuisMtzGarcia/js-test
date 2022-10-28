@@ -240,9 +240,6 @@
                 let p1 = montoMinimo + (Math.sqrt(montoMaximo - montoMinimo));
                 let p2 = montoMinimo + (0.0175 * (montoMaximo - montoMinimo));
 
-
-                // No me quedo claro lo que significaba max(p1, p2), asi que tome la decision
-                // de interpretarlo como el mayor de estos numeros.
                 let recomendacionLinea;
                 if (p1 > p2) {
                     recomendacionLinea = p1;
@@ -255,7 +252,7 @@
                 let objeto = {
                     'montoMinimo': montoMinimo,
                     'montoMaximo': montoMaximo,
-                    'recomendacionLinea': recomendacionLinea,
+                    'recomendacionLinea': recomendacionLinea.toFixed(2),
                 }
                 return objeto
             }
